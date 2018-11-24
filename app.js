@@ -24,14 +24,9 @@ app.get('/upload', (req, res) => {
 
 let pathToFiles = path.join(__dirname, '/writeTo/')
 let dir = fs.readdirSync(pathToFiles)
-// let pathToFile = path.join(__dirname, `/writeTo/${dir[1]}`)
-// fs.readFile(pathToFile, 'utf8', (err, data) => {
-//     console.log(data)
-// })
-// console.log(readStream.pipe())
-// console.log(dir[1])
-// console.log(allFiles)
+console.log(dir.length)
 app.get('/notes', (req, res) => {
+    notes = []
     for(let i = 0; i < dir.length; i++) {
         let pathToFile = path.join(__dirname, `/writeTo/${dir[i]}`)
         let readStream = fs.createReadStream(pathToFile)
@@ -39,7 +34,4 @@ app.get('/notes', (req, res) => {
     }
     res.json(notes)
 })
-    // let readStream = fs.createReadStream(pathToFiles)
-
-
 app.listen(3000);
