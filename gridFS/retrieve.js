@@ -31,5 +31,3 @@ conn.once('open', function() {
 })
 
 conn.on('error', console.error.bind(console, 'connection error:'))
-
-

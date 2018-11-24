@@ -4,7 +4,9 @@ const url = '/notes';
 fetch(url)
     .then(response => response.json())
     .then(notes => {
-        const li = document.createElement('li');
-        li.textContent = notes;
-        ul.appendChild(li);
+        notes.forEach(note => {
+            const li = document.createElement('li');
+            li.textContent = note;
+            ul.appendChild(li);
+        });
     })
