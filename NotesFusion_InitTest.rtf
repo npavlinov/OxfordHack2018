@@ -1,0 +1,24 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf400
+{\fonttbl\f0\fmodern\fcharset0 CourierNewPS-ItalicMT;\f1\fmodern\fcharset0 CourierNewPSMT;}
+{\colortbl;\red255\green255\blue255;\red71\green91\blue98;\red242\green242\blue242;\red53\green118\blue190;
+\red38\green38\blue38;\red56\green120\blue83;}
+{\*\expandedcolortbl;;\cssrgb\c34510\c43137\c45882;\cssrgb\c96078\c96078\c96078;\cssrgb\c25882\c54510\c79216;
+\cssrgb\c20000\c20000\c20000;\cssrgb\c27451\c53725\c40000;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww23660\viewh14480\viewkind0
+\deftab720
+\pard\pardeftab720\sl300\partightenfactor0
+
+\f0\i\fs26 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 # These code snippets use an open-source library. {\field{\*\fldinst{HYPERLINK "http://unirest.io/python"}}{\fldrslt \cf4 \strokec4 http://unirest.io/python}}
+\f1\i0 \cf5 \strokec5 \
+response = unirest.post(\cf6 \strokec6 "https://twinword-text-similarity-v1.p.mashape.com/similarity/"\cf5 \strokec5 ,\
+  headers=\{\
+    \cf6 \strokec6 "X-Mashape-Key"\cf5 \strokec5 : \cf6 \strokec6 "swb9S2ZELsmsh8SWVp7nMrUs2NxKp1ziuTxjsnEyYj69sVinYt"\cf5 \strokec5 ,\
+    \cf6 \strokec6 "Content-Type"\cf5 \strokec5 : \cf6 \strokec6 "application/x-www-form-urlencoded"\cf5 \strokec5 ,\
+    \cf6 \strokec6 "Accept"\cf5 \strokec5 : \cf6 \strokec6 "application/json"\cf5 \strokec5 \
+  \},\
+  params=\{\
+    \cf6 \strokec6 "text1"\cf5 \strokec5 : \cf6 \strokec6 "The hippocampus is a major component of the brains of humans and other vertebrates. It belongs to the limbic system and plays important roles in the consolidation of information from short-term memory to long-term memory and spatial navigation. Humans and other mammals have two hippocampi, one in each side of the brain. The hippocampus is a part of the cerebral cortex; and in primates it is located in the medial temporal lobe, underneath the cortical surface. It contains two main interlocking parts: Ammon's horn and the dentate gyrus."\cf5 \strokec5 ,\
+    \cf6 \strokec6 "text2"\cf5 \strokec5 : \cf6 \strokec6 "An important part of the brains of humans and other vertebrates is the hippocampus. It's part of the limbic system and moves information from short-term to long-term memory. It also helps us move around. Humans and other mammals have two hippocampi, one on each side. The hippocampus is a part of the cerebral cortex; and in primates it is found in the medial temporal lobe, beneathe the cortical surface. It has two main interlocking parts: Ammon's horn and the dentate gyrus."\cf5 \strokec5 \
+  \}\
+)}
