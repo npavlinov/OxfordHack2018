@@ -1,8 +1,20 @@
-const express = require('express')
-const app = express()
+const express = require('express');
+const app = express();
 
 app.set('view engine', 'ejs');
-app.use(express.static('public'))
+app.use(express.static('public'));
+
 app.get('/', (req, res) => {
-    res.render('index')
-}).listen(3000)
+    res.render('index');
+});
+
+app.get('/download', (req, res) => {
+    res.render('download');
+});
+
+app.get('/upload', (req, res) => {
+    res.render('upload');
+});
+
+
+app.listen(3000);
