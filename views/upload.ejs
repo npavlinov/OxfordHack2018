@@ -16,11 +16,14 @@
     <div class="jumbotron text-center">
          <h1>Choose notes!</h1>
     </div>
-    <form method="POST" action="/upload" encType="multipart/form-data">
-        <h3>Upload notes</h3>
-        <input type="file" id="uploadNotes" onchange="">
+    <form ref='uploadForm' 
+      id='uploadForm' 
+      action='/upload-note' 
+      method='post' 
+      encType="multipart/form-data">
+        <input type="file" name="file" />
         <input type='submit' value='Upload!' />
-    </form>
+    </form> 
 
     <footer class="page-footer" style="padding-top: 10px">
             <div class="container">

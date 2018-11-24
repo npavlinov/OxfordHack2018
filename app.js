@@ -44,17 +44,18 @@ app.get('/notes', (req, res) => {
     res.json(notes)
 })
 
-app.post('/upload', (req, res) => {
+app.post('/upload-note', (req, res) => {
     if (Object.keys(req.files).length == 0) {
         return res.status(400).send('No files were uploaded.');
       }
       // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
-      let sampleFile = req.files.sampleFile;
+      let sampleFile = req.files.file;
       // Use the mv() method to place the file somewhere on your server
-      sampleFile.mv(`/writeTo/${fileId++}`, function(err) {
+      pathToSave = path.join(__dirname, `/writeTo/${fileId++}.txt`)
+      sampleFile.mv(pathToSave, function(err) {
         if (err)
           return res.status(500).send(err);
-        res.send('File uploaded!');
+        console.log('File uploaded', fileId)
       });
 })
 app.listen(3000);
