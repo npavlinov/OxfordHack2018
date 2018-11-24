@@ -18,7 +18,8 @@ def getString(s1, s2):
     params=params, headers=headers)
     
 
-j=json.loads(getString("HEY", "HELLO").text)
-print(j)
-print(j['similarity'])
+if __name__=='__main__':
+    j=json.loads(getString("this is a 2nd paragraph", "paragraph number 2").text)
+    print(j)
+    print(j['similarity'])
 
