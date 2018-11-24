@@ -18,6 +18,7 @@
 }
 
 .page-footer {
+    position: fixed;
     font-size: 25px;
     left: 0;
     bottom: 0;
