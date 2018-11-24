@@ -4,7 +4,7 @@ const path = require('path')
 const fs = require('fs')
 const cors = require('cors')
 
-app.use(cors)
+app.use(cors())
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 
@@ -22,6 +22,15 @@ app.get('/upload', (req, res) => {
     res.render('upload');
 });
 
+let pathToFiles = path.join(__dirname, '/writeTo/')
+let dir = fs.readdirSync(pathToFiles)
+// let pathToFile = path.join(__dirname, `/writeTo/${dir[1]}`)
+// fs.readFile(pathToFile, 'utf8', (err, data) => {
+//     console.log(data)
+// })
+// console.log(readStream.pipe())
+// console.log(dir[1])
+// console.log(allFiles)
 app.get('/notes', (req, res) => {
     for(let i = 0; i < dir.length; i++) {
         let pathToFile = path.join(__dirname, `/writeTo/${dir[i]}`)
@@ -30,5 +39,7 @@ app.get('/notes', (req, res) => {
     }
     res.json(notes)
 })
+    // let readStream = fs.createReadStream(pathToFiles)
+
 
 app.listen(3000);
