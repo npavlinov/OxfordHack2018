@@ -16,3 +16,15 @@
 .jumbotron { 
     background: linear-gradient(rgba(0, 0, 250, 0.25), rgba(125, 250, 250, 0.45));
 }
+
+.page-footer {
+    position: fixed;
+    font-size: 25px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    min-height: 100px;
+    background-color: rgba(125, 250, 250, 0.45);
+    color: black;
+    text-align: center;
+}

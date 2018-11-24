@@ -20,5 +20,4 @@ app.get('/notes', (req, res) => {
     res.json("hello");
 })
 
-
 app.listen(3000);
