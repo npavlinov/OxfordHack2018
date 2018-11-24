@@ -5,7 +5,6 @@ const url = '/notes';
 listAllNotes();
 
 function listAllNotes() {
-    ul.innerHTML = '';  
     fetch(url)
     .then(response => response.json())
     .then(notes => {

@@ -3,11 +3,14 @@ const app = express();
 const path = require('path')
 const fs = require('fs')
 const cors = require('cors')
+const fileUpload = require('express-fileupload')
 
+app.use(fileUpload())
 app.use(cors())
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 
+let fileId = 0;
 let notes = {
     'title': [],
     'content': []
@@ -39,5 +42,19 @@ app.get('/notes', (req, res) => {
         // notes.content.push(fs.readFileSync(pathToFile, 'utf8'))
     }
     res.json(notes)
+})
+
+app.post('/upload', (req, res) => {
+    if (Object.keys(req.files).length == 0) {
+        return res.status(400).send('No files were uploaded.');
+      }
+      // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
+      let sampleFile = req.files.sampleFile;
+      // Use the mv() method to place the file somewhere on your server
+      sampleFile.mv(`/writeTo/${fileId++}`, function(err) {
+        if (err)
+          return res.status(500).send(err);
+        res.send('File uploaded!');
+      });
 })
 app.listen(3000);

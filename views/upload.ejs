@@ -16,9 +16,10 @@
     <div class="jumbotron text-center">
          <h1>Choose notes!</h1>
     </div>
-    <form>
+    <form method="POST" action="/upload" encType="multipart/form-data">
         <h3>Upload notes</h3>
-        <input type="file" id="uploadNotes" onchange="onFileReceive()">
+        <input type="file" id="uploadNotes" onchange="">
+        <input type='submit' value='Upload!' />
     </form>
 
     <footer class="page-footer" style="padding-top: 10px">
