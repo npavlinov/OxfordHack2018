@@ -17,7 +17,7 @@ app.get('/upload', (req, res) => {
 });
 
 app.get('/notes', (req, res) => {
-    res.send("hello");
+    res.json("hello");
 })
 
 
