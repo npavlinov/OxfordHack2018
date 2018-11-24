@@ -9,17 +9,16 @@ headers={
     "Accept": "application/json"
   }
 
-
-params={
-    "text1": str(text1),
-    "text2": str(text2)
+def getString(s1, s2):
+    params={
+        "text1": s1,
+        "text2": s2
     }
+    return requests.post('https://twinword-text-similarity-v1.p.mashape.com/similarity/', 
+    params=params, headers=headers)
+    
 
-
-r = requests.post('https://twinword-text-similarity-v1.p.mas\
-hape.com/similarity/', params=params, headers=headers)
-
-j=json.loads(r.text)
+j=json.loads(getString("HEY", "HELLO").text)
 print(j)
 print(j['similarity'])
 
