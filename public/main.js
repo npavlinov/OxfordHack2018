@@ -16,3 +16,13 @@ function listAllNotes() {
         })
     })
 }
+
+
+function onFileReceive() {
+    let input = document.getElementById('uploadNotes');
+
+    for (var i = 0; i < input.files.length; i++) {
+        console.log("input: %O",input);
+        console.log("input: %O",input.files);
+    }
+}
