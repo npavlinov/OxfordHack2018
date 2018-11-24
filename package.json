@@ -1,0 +1,24 @@
+{
+  "name": "oxfordhack2018",
+  "version": "1.0.0",
+  "description": "Web app for compiling uni notes",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/npavlinov/OxfordHack2018.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/npavlinov/OxfordHack2018/issues"
+  },
+  "homepage": "https://github.com/npavlinov/OxfordHack2018#readme",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.4"
+  }
+}
