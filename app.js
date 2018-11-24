@@ -4,7 +4,7 @@ const path = require('path')
 const fs = require('fs')
 const cors = require('cors')
 
-app.use(cors)
+app.use(cors())
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 
