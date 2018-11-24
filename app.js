@@ -38,3 +38,6 @@ app.use(express.static('public'))
 app.get('/', (req, res) => {
     res.render('index')
 }).listen(3000)
+
+
+// mongodb://nfusion:18ZcdsEZ4weVdlIJqTf7seA5gI2hjRSab8U9bp2EOxnMFugRrvHNBh6UNsxe29DsSOXOTsp8nQwW7IXZtLvviA%3D%3D@nfusion.documents.azure.com:10255/?ssl=true
