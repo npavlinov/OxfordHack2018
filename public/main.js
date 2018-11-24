@@ -1,8 +1,6 @@
 const ul = document.getElementById('notes-list');
 const url = '/notes';
 
-ul.empty();
-
 fetch(url)
     .then(response => response.json())
     .then(notes => {
