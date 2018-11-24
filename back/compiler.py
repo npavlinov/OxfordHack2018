@@ -1,10 +1,15 @@
 import sys
 import requests
 import json
+#from similar import *
+import API
+from Paragraph import Paragraph
 
-##print("This is the name of the script: ", sys.argv[0])
-##print("Number of arguments: ", len(sys.argv))
-##print("The arguments are: " , str(sys.argv))
+def similarity(a, b):
+    return json.loads(API.getString(a, b).text)["similarity"]
+
+def keywords(txt):
+    return []
 
 if len(sys.argv)==1:
     files_names = ['first.txt', 'second.txt']
@@ -14,44 +19,23 @@ print(files_names)
 
 
 
-output=open("out.txt", 'w')
-output.write("\tThis is our result:\n\n")
-
 para=[]
-for file_name in files_names:
+for nb, file_name in enumerate(files_names):
+    print(file_name)
     file=open(file_name, 'r')
     txt=file.read()
-    #output.write(txt)
-    #output.write('\n')
-    para.append(txt.split('\n\n'))
+    txt=txt.split('\n\n')
+    para.append([])
+    for i, p in enumerate(txt):
+        para[nb].append(Paragraph(file_name, i, keywords(p)))
     file.close()
 
 print(para)
 
-i=0
-while len(para[0])>0:
-    #compare
-    headers={
-        "X-Mashape-Key": "swb9S2ZELsmsh8SWVp7nMrUs2NxKp1ziuTxjsnEyYj69sVinYt",
-        "Content-Type": "application/x-www-form-urlencoded",
-        "Accept": "application/json"
-      }
-    params={
-        "text1": str(para[0][i]),
-        "text2": str(para[1][i])
-        }
-    r = requests.post('https://twinword-text-similarity-v1.p.mas\
-    hape.com/similarity/', params=params, headers=headers)
-    j=json.loads(r.text)
-    print(j)
-    if j['similarity']>0.8:
-        output.write(para[0][i])
-    else:
-        output.write(para[0][i])
-        output.write(para[1][i])
-    i+=1
 
-    
+
+output=open("out.txt", 'w')
+output.write("\tThis is our result:\n\n")
 
 output.close()
     
