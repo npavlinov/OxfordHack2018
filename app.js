@@ -36,6 +36,7 @@ let pathToFiles = path.join(__dirname, '/writeTo/')
 let dir = fs.readdirSync(pathToFiles)
 
 app.get('/notes', (req, res) => {
+    dir = fs.readdirSync(pathToFiles)
     notes = {
         'title': [],
         'content': []

@@ -1,0 +1,7 @@
+# Sports
+
+## parietal lobe
+	The parietal lobe is one of the four major lobes of the cerebral cortex of mammals. The parietal lobe is positioned above the temporal lobe and behind the frontal lobe and central sulcus.
+	The parietal lobe integrates sensory information among various modalities, including spatial sense and navigation (proprioception), the main sensory receptive area for the sense of touch (mechanoreception) in the somatosensory cortex which is just posterior to the central sulcus in the postcentral gyrus, and the dorsal stream of the visual system. The major sensory inputs from the skin (touch, temperature, and pain receptors), relay through the thalamus to the parietal lobe.
+	Several areas of the parietal lobe are important in language processing. The somatosensory cortex can be illustrated as a distorted figure – the homunculus (Latin: "little man"), in which the body parts are rendered according to how much of the somatosensory cortex is devoted to them. The superior parietal lobule and inferior parietal lobule are the primary areas of body or spacial awareness. A lesion commonly in the right superior or inferior parietal lobule leads to hemineglect.
+	The parietal lobe plays important roles in integrating sensory information from various parts of the body, knowledge of numbers and their relations, and in the manipulation of objects. Its function also includes processing information relating to the sense of touch. Portions of the parietal lobe are involved with visuospatial processing.
