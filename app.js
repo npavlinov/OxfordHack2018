@@ -59,3 +59,10 @@ app.post('/upload-note', (req, res) => {
       });
 })
 app.listen(3000);
+
+/* 
+1. Select topic
+    - check against current ones
+    - if not in current topics - add new
+2. Python call - > Saves a file in writeTo
+*/

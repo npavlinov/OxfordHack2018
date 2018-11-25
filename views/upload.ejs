@@ -37,14 +37,23 @@
       action='/upload-note' 
       method='post' 
       encType="multipart/form-data">
+      <div class="input-group mb-3">
+      <div class="input-group-prepend">
+          <label class="input-group-text" for="inputGroupSelect01">Options</label>
+        </div>
+        <select class="custom-select" id="inputGroupSelect01">
+          <option selected>Choose...</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+      </div>
       <div class="input-group width-part">
-          <div class="input-group-prepend">
-              <input class="input-group-text" type='submit' value='Upload!'/>
-          </div>
-          <div class="custom-file">
-            <input type="file" name="file" class="custom-file-input" id="inputGroupFile01"/>
-            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-          </div>
+            <input class="btn btn-primary" type='submit' value='Upload!'/>
+            <div class="custom-file">
+                <input type="file" name="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+            </div>
         </div>
       </div>
     </form> 
