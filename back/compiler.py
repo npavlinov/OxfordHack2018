@@ -46,8 +46,9 @@ def keywords(text):
 
 # MAIN COMPILE FUNCTION
 def compile(input_names, output_name):
+    print(input_names)
     para=[]
-    for nb, file_name in enumerate(files_names):
+    for nb, file_name in enumerate(input_names):
         file=open(file_name, 'r')
         txt=file.read()
         #print(file_name+":")
@@ -104,13 +105,12 @@ def compile(input_names, output_name):
     #print(open("out.txt", 'r').read())
 
 
-
-
+import os
 if __name__=='__main__':
     folder=sys.argv[1]
-
-    compile(["../"+folder+"/notes.md", "new_notes.txt"], \
-            "../"+folder+"/notes.md")
-
+    dir = os.getcwd()
+    compile([dir+"/writeTo/"+folder+"/notes.md", dir+"/back/new_notes.txt"], \
+            dir+"/writeTo/"+folder+"/notes.md")
+    
 
 

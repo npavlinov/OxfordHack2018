@@ -41,7 +41,7 @@ app.get('/notes', (req, res) => {
         'content': []
     }
     for(let i = 0; i < dir.length; i++) {
-        let pathToTopics = path.join(pathToFiles, `${dir[i]}/notes.txt`) 
+        let pathToTopics = path.join(pathToFiles, `${dir[i]}/notes.md`) 
         console.log(pathToTopics)
         notes.title.push(dir[i])
         notes.content.push(fs.readFileSync(pathToTopics, 'utf8'))
@@ -65,14 +65,14 @@ app.post('/upload-note', (req, res) => {
         console.log('File uploaded', fileId)
     });
 
-    // let options = {
-    //     args: [`${req.body.topic}`]
-    // };
+    let options = {
+        args: [`${req.body.topic}`]
+    };
 
-    // PythonShell.run('back/compiler.py', options, function(err, results) {
-    //     if(err) throw err;
-    // })
-    // res.end();
+    PythonShell.run('back/compiler.py', options, function(err, results) {
+        if(err) throw err;
+    })
+    res.end();
     })
 app.get('/topics', (req, res) => {
     res.json(dir)
