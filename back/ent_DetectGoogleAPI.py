@@ -15,24 +15,20 @@ hippocampus can also result from oxygen starvation (hypoxia), encephalitis, \
 or medial temporal lobe epilepsy. People with extensive, bilateral hippocampal \
 damage may experience anterograde amnesia (the inability to form and retain new \
 memories)."
-text2 = "The frontal lobe, located at the front of the brain, is the largest of the \
-four major lobes of the cerebral cortex in mammals. The frontal lobe is located \
-at the front of each cerebral hemisphere (in front of the parietal lobe and the \
-temporal lobe). It is separated from the parietal lobe by a groove between tissues \
-called the central sulcus, and from the temporal lobe by a deeper groove called \
-the lateral sulcus (Sylvian fissure). The most anterior rounded part of the \
-frontal lobe (though not well-defined) is known as the frontal pole, one of the \
-three poles of the cerebrum."
-text3 = "The primary motor cortex (Brodmann area 4) is a brain region that in \
-humans is located in the dorsal portion of the frontal lobe. It is the primary \
-region of the motor system and works in association with other motor areas i\
-ncluding premotor cortex, the supplementary motor area, posterior parietal cortex, \
-and several subcortical brain regions, to plan and execute movements. Primary \
-motor cortex is defined anatomically as the region of cortex that contains large \
-neurons known as Betz cells. Betz cells, along with other cortical neurons, send \
-long axons down the spinal cord to synapse onto the interneuron circuitry of \
-the spinal cord and also directly onto the alpha motor neurons in the spinal \
-cord which connect to the muscles."
+text2 = "In rodents as model organisms, the hippocampus has been studied \
+extensively as part of a brain system responsible for spatial memory and \
+navigation. Many neurons in the rat and mouse hippocampus respond as place cells: \
+that is, they fire bursts of action potentials when the animal passes through a \
+specific part of its environment. Hippocampal place cells interact extensively \
+with head direction cells, whose activity acts as an inertial compass, and \
+conjecturally with grid cells in the neighboring entorhinal cortex."
+text3 = "The hippocampus (named after its resemblance to the seahorse, from the \
+Greek, seahorse from hippos, horse and, kampos, sea monster) is a major \
+component of the brains of humans and other vertebrates. Humans and other \
+mammals have two hippocampi, one in each side of the brain. The hippocampus \
+belongs to the limbic system and plays important roles in the consolidation \
+of information from short-term memory to long-term memory, and in spatial \
+memory that enables navigation. "
 
 def ent_detect(text):
     client = language.LanguageServiceClient()
@@ -53,7 +49,7 @@ def ent_detect(text):
                'EVENT', 'WORK_OF_ART', 'CONSUMER_GOOD', 'OTHER')
     return entities,entity_type
 
-entities, entity_type = ent_detect(text1)
+entities, entity_type = ent_detect(text3)
 
 for i in range(0,3):
     print('=' * 20)
