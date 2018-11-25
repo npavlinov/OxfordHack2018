@@ -30,16 +30,17 @@ app.get('/upload', (req, res) => {
 
 let pathToFiles = path.join(__dirname, '/writeTo/')
 let dir = fs.readdirSync(pathToFiles)
+
 app.get('/notes', (req, res) => {
     notes = {
         'title': [],
         'content': []
     }
     for(let i = 0; i < dir.length; i++) {
-        let pathToFile = path.join(__dirname, `/writeTo/${dir[i]}`)
+        let pathToTopics = path.join(pathToFiles, `${dir[i]}/notes.txt`) 
+        console.log(pathToTopics)
         notes.title.push(dir[i])
-        notes.content.push(fs.readFileSync(pathToFile, 'utf8'))
-        // notes.content.push(fs.readFileSync(pathToFile, 'utf8'))
+        notes.content.push(fs.readFileSync(pathToTopics, 'utf8'))
     }
     res.json(notes)
 })
@@ -58,6 +59,11 @@ app.post('/upload-note', (req, res) => {
         console.log('File uploaded', fileId)
       });
 })
+
+app.get('/topics', (req, res) => {
+    res.json(dir)
+})
+
 app.listen(3000);
 
 /* 

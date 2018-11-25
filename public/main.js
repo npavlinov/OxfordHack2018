@@ -1,6 +1,8 @@
 const ul = document.querySelector('#notes-list');
 const notesHTML = document.querySelector('#notes-list-content')
+const selects = document.querySelector('#inputGroupSelect01')
 const url = '/notes';
+const topic_url = '/topics';
 
 listAllNotes();
 
@@ -29,12 +31,19 @@ function listAllNotes() {
     })
 }
 
+getTopics()
 
-function onFileReceive() {
-    let input = document.getElementById('uploadNotes');
-
-    for (var i = 0; i < input.files.length; i++) {
-        console.log("input: %O",input);
-        console.log("input: %O",input.files);
-    }
+function getTopics() {
+    fetch(topic_url)
+    .then(response => response.json())
+    .then(topics => {
+        console.log(topics)
+        topics.forEach(topic => {
+            console.log(topic)
+            let option = document.createElement('option')
+            option.text = topic
+            option.value = topic.toLowerCase()
+            selects.appendChild(option)
+        });
+    })
 }
