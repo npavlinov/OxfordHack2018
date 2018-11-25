@@ -1,8 +1,6 @@
 const ul = document.querySelector('#notes-list');
 const notesHTML = document.querySelector('#notes-list-content')
-const selects = document.querySelector('#inputGroupSelect01')
 const url = '/notes';
-const topic_url = '/topics';
 
 listAllNotes();
 
@@ -28,22 +26,5 @@ function listAllNotes() {
             div.appendChild(hr)
             notesHTML.appendChild(div)
         }
-    })
-}
-
-getTopics()
-
-function getTopics() {
-    fetch(topic_url)
-    .then(response => response.json())
-    .then(topics => {
-        console.log(topics)
-        topics.forEach(topic => {
-            console.log(topic)
-            let option = document.createElement('option')
-            option.text = topic
-            option.value = topic.toLowerCase()
-            selects.appendChild(option)
-        });
     })
 }

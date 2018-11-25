@@ -4,6 +4,8 @@ const path = require('path')
 const fs = require('fs')
 const cors = require('cors')
 const fileUpload = require('express-fileupload')
+import {PythonShell} from 'python-shell';
+
 
 app.use(fileUpload())
 app.use(cors())
@@ -29,6 +31,7 @@ app.get('/upload', (req, res) => {
 });
 
 let pathToFiles = path.join(__dirname, '/writeTo/')
+
 let dir = fs.readdirSync(pathToFiles)
 
 app.get('/notes', (req, res) => {
@@ -46,20 +49,30 @@ app.get('/notes', (req, res) => {
 })
 
 app.post('/upload-note', (req, res) => {
+    //console.log(req.body.topic)
+    
     if (Object.keys(req.files).length == 0) {
         return res.status(400).send('No files were uploaded.');
       }
       // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
       let sampleFile = req.files.file;
       // Use the mv() method to place the file somewhere on your server
-      pathToSave = path.join(__dirname, `/writeTo/${fileId++}.txt`)
+      pathToSave = path.join(__dirname, '/back/new_notes.txt')
       sampleFile.mv(pathToSave, function(err) {
         if (err)
           return res.status(500).send(err);
         console.log('File uploaded', fileId)
-      });
-})
+    });
 
+    let options = {
+        args: ['value1', 'value2', 'value3']
+    };
+
+    PythonShell.run('back/compiler.py', options, function(err, results) {
+        if(err) throw err;
+    })
+    res.end();
+    })
 app.get('/topics', (req, res) => {
     res.json(dir)
 })
