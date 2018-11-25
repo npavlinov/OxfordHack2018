@@ -45,7 +45,7 @@ def keywords(text):
 
 
 # MAIN COMPILE FUNCTION
-def compile(input_names, output_name):
+def compile(input_names, output_name, folder='Biology'):
     print(input_names)
     para=[]
     for nb, file_name in enumerate(input_names):
@@ -53,8 +53,14 @@ def compile(input_names, output_name):
         txt=file.read()
         #print(file_name+":")
         #print(txt)
+        b=txt.find('##')
+        while b!=-1:
+            e=txt.find('\n', b)
+            txt=txt[:b]+txt[e:]
+            b=txt.find('##')
         txt=txt.split('\n\n')
         for i, p in enumerate(txt):
+            p=p.replace('\n', '').replace('\t', '')
             para.append(Paragraph(file_name, i, keywords(p), p))
         file.close()
 
@@ -91,11 +97,12 @@ def compile(input_names, output_name):
     #    print(p)
 
     output=open(output_name, 'w')
+    output.write('# '+folder+'\n')
     for paras in newPara:
         if len(paras)>1:
-            output.write('\n##' + " ".join(paras[0].common(paras[1]))+'\n')
+            output.write('\n## ' + " ".join(paras[0].common(paras[1]))+'\n')
         elif len(paras[0].keywords)>0:
-            output.write('\n##' + paras[0].keywords[0]+'\n')
+            output.write('\n## ' + paras[0].keywords[0]+'\n')
         for p in paras:
             if len(p.text)>5:
                 output.write("\t"+p.text+"\n")
@@ -110,7 +117,7 @@ if __name__=='__main__':
     folder=sys.argv[1]
     dir = os.getcwd()
     compile([dir+"/writeTo/"+folder+"/notes.md", dir+"/back/new_notes.txt"], \
-            dir+"/writeTo/"+folder+"/notes.md")
+            dir+"/writeTo/"+folder+"/notes.md", folder)
     
 
 
