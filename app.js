@@ -72,6 +72,7 @@ app.post('/upload-note', (req, res) => {
     PythonShell.run('back/compiler.py', options, function(err, results) {
         if(err) throw err;
     })
+    
     res.redirect('/download');
     })
 

@@ -40,7 +40,14 @@
       <div class="input-group-prepend">
           <label class="input-group-text" for="inputGroupSelect01">Options</label>
         </div>
-        <select class="custom-select" name="topic" id="inputGroupSelect01"></select>
+        <select class="custom-select" name="topic" id="inputGroupSelect01" onchange="addCourse(this)">
+        </select>
+        <div class="input-group">
+          <div id = "ifAdd" style="display: none;">
+            <label for="exampleFormControlInput1">Course name:</label>
+            <input type="text" name="course" class="form-control" id="exampleFormControlInput1" placeholder="Ex(Physics)">
+          </div>
+      </div>
       </div>
       <div class="input-group width-part">
             <input class="btn btn-primary" type='submit' value='Upload!'/>

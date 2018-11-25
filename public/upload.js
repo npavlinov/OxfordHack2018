@@ -14,4 +14,18 @@ function getTopics() {
             selects.appendChild(option)
         });
     })
+    .then(() => {
+        let optionAdd = document.createElement('option')
+        optionAdd.text = 'Add a course'
+        optionAdd.value = 'add'
+        selects.appendChild(optionAdd)
+    })
+}
+
+function addCourse(that) {
+    if(that.value == 'add') {
+        document.getElementById('ifAdd').style.display = "block"
+    } else {
+        document.getElementById('ifAdd').style.display = "none"   
+    }
 }
