@@ -1,6 +1,22 @@
 
 ##hippocampus
+	
+##hippocampus
 	The hippocampus (named after its resemblance to the seahorse, from the Greek , "seahorse" from hippos, "horse" and kampos, "sea monster") is a major component of the brains of humans and other vertebrates. Humans and other mammals have two hippocampi, one in each side of the brain. The hippocampus belongs to the limbic system and plays important roles in the consolidation of information from short-term memory to long-term memory, and in spatial memory that enables navigation. The hippocampus is located under the cerebral cortex (allocortical) and in primates in the medial temporal lobe. It contains two main interlocking parts: the hippocampus proper (also called Ammon's horn) and the dentate gyrus. 
+	In Alzheimer's disease, the hippocampus is one of the first regions of the brain to suffer damage; short-term memory loss and disorientation are included among the early symptoms. Damage to the hippocampus can also result from oxygen starvation, encephalitis, or medial temporal lobe epilepsy. People with extensive, bilateral hippocampal damage may experience anterograde amnesia.
 
 ##frontal lobe
-	The frontal lobe, located at the front of the brain, is the largest of the four major lobes of the cerebral cortex in mammals. The frontal lobe is located at the front of each cerebral hemisphere (in front of the parietal lobe and the temporal lobe). It is separated from the parietal lobe by a groove between tissues called the central sulcus, and from the temporal lobe by a deeper groove called the lateral sulcus (Sylvian fissure). The most anterior rounded part of the frontal lobe (though not well-defined) is known as the frontal pole, one of the three poles of the cerebrum.
+	##frontal lobe
+	The frontal lobe, located at the front of the brain, is the largest of the major lobes of the cerebral cortex in mammals. The frontal lobe is located at the front of each cerebral hemisphere (in front of the parietal lobe and the temporal lobe). It is separated from the parietal lobe by a groove between tissues called the central sulcus, and from the temporal lobe by a deeper groove called the lateral sulcus (Sylvian fissure). The most anterior rounded part of the frontal lobe (though not well-defined) is known as the frontal pole, one of the three poles of the cerebrum.
+
+##gyrus
+	##gyrus
+	The precentral gyrus, a portion of the frontal lobe directly anterior to the central sulcus, contains the primary motor cortex, which controls voluntary movements of specific body parts. 
+
+##parietal lobe
+	
+##parietal lobe
+	The parietal lobe is one of the four major lobes of the cerebral cortex of mammals. The parietal lobe is positioned above the temporal lobe and behind the frontal lobe and central sulcus.
+	The parietal lobe integrates sensory information among various modalities, including spatial sense and navigation (proprioception), the main sensory receptive area for the sense of touch (mechanoreception) in the somatosensory cortex which is just posterior to the central sulcus in the postcentral gyrus, and the dorsal stream of the visual system. The major sensory inputs from the skin (touch, temperature, and pain receptors), relay through the thalamus to the parietal lobe.
+	Several areas of the parietal lobe are important in language processing. The somatosensory cortex can be illustrated as a distorted figure – the homunculus (Latin: "little man"), in which the body parts are rendered according to how much of the somatosensory cortex is devoted to them. The superior parietal lobule and inferior parietal lobule are the primary areas of body or spacial awareness. A lesion commonly in the right superior or inferior parietal lobule leads to hemineglect.
+	The parietal lobe plays important roles in integrating sensory information from various parts of the body, knowledge of numbers and their relations, and in the manipulation of objects. Its function also includes processing information relating to the sense of touch. Portions of the parietal lobe are involved with visuospatial processing.
