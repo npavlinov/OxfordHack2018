@@ -1,14 +1,7 @@
+A database is an organized collection of data, generally stored and accessed electronically from a computer system. Where databases are more complex they are often developed using formal design and modeling techniques.
 
-##Computer science
-	Computer science is the theory, experimentation, and engineering that form the basis for the design and use of computers. It involves the study of algorithms that process, store, and communicate digital information. A computer scientist specializes in the theory of computation and the design of computational systems.
+The database management system (DBMS) is the software that interacts with end users, applications, the database itself to capture and analyze the data and provides facilities to administer the database. The sum total of the database, the DBMS and the associated applications can be referred to as a "database system". Often the term "database" is also used to loosely refer to any of the DBMS, the database system or an application associated with the database.
 
-##hippocampus
-	The hippocampus (named after its resemblance to the seahorse, from the Greek , "seahorse" from hippos, "horse" and kampos, "sea monster") is a major component of the brains of humans and other vertebrates. Humans and other mammals have two hippocampi, one in each side of the brain. The hippocampus belongs to the limbic system and plays important roles in the consolidation of information from short-term memory to long-term memory, and in spatial memory that enables navigation. The hippocampus is located under the cerebral cortex (allocortical) and in primates in the medial temporal lobe. It contains two main interlocking parts: the hippocampus proper (also called Ammon's horn) and the dentate gyrus. 
-	In Alzheimer's disease, the hippocampus is one of the first regions of the brain to suffer damage; short-term memory loss and disorientation are included among the early symptoms. Damage to the hippocampus can also result from oxygen starvation, encephalitis, or medial temporal lobe epilepsy. People with extensive, bilateral hippocampal damage may experience anterograde amnesia.
+Database storage is the container of the physical materialization of a database. It comprises the internal (physical) level in the database architecture. It also contains all the information needed (e.g., metadata, "data about the data", and internal data structures) to reconstruct the conceptual level and external level from the internal level when needed. Putting data into permanent storage is generally the responsibility of the database engine a.k.a. "storage engine".
 
-##frontal lobe
-	The frontal lobe, located at the front of the brain, is the largest of the major lobes of the cerebral cortex in mammals. The frontal lobe is located at the front of each cerebral hemisphere (in front of the parietal lobe and the temporal lobe). It is separated from the parietal lobe by a groove between tissues called the central sulcus, and from the temporal lobe by a deeper groove called the lateral sulcus (Sylvian fissure). The most anterior rounded part of the frontal lobe (though not well-defined) is known as the frontal pole, one of the three poles of the cerebrum.
-
-##gyrus
-	The precentral gyrus, a portion of the frontal lobe directly anterior to the central sulcus, contains the primary motor cortex, which controls voluntary movements of specific body parts. 
-
+Machine learning (ML) is the study of algorithms and mathematical models that computer systems use to progressively improve their performance on a specific task. Machine learning algorithms build a mathematical model of sample data, known as "training data", in order to make predictions or decisions without being explicitly programmed to perform the task.
