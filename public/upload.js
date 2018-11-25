@@ -25,7 +25,10 @@ function getTopics() {
 function addCourse(that) {
     if(that.value == 'add') {
         document.getElementById('ifAdd').style.display = "block"
+        document.getElementById('inputGroupSelect01').name = ""
     } else {
         document.getElementById('ifAdd').style.display = "none"   
+        document.getElementById('inputGroupSelect01').name = "topic"
+
     }
 }

@@ -115,9 +115,16 @@ def compile(input_names, output_name, folder='Biology'):
 import os
 if __name__=='__main__':
     folder=sys.argv[1]
-    dir = os.getcwd()
-    compile([dir+"/writeTo/"+folder+"/notes.md", dir+"/back/new_notes.txt"], \
-            dir+"/writeTo/"+folder+"/notes.md", folder)
+    my_dir = os.getcwd()
+    if(os.path.isdir(my_dir + "/writeTo/" + folder)):
+        compile([my_dir+"/writeTo/"+folder+"/notes.md", my_dir+"/back/new_notes.txt"], \
+            my_dir+"/writeTo/"+folder+"/notes.md", folder)
+    else:
+        os.mkdir(my_dir + "/writeTo/" + folder)
+        f = open(my_dir + "/writeTo/" + folder + "/notes.md", "w+").close()
+        compile([my_dir+"/writeTo/"+folder+"/notes.md", my_dir+"/back/new_notes.txt"], \
+            my_dir+"/writeTo/"+folder+"/notes.md", folder)
+    
     
 
 
