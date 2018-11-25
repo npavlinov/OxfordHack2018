@@ -5,6 +5,7 @@ import sys
 import requests
 import json
 import six
+import scrap
 from Paragraph import Paragraph
 
 
@@ -51,13 +52,28 @@ def compile(input_names, output_name, folder='Biology'):
     for nb, file_name in enumerate(input_names):
         file=open(file_name, 'r')
         txt=file.read()
-        #print(file_name+":")
-        #print(txt)
+        
+        #delete the titles
         b=txt.find('##')
         while b!=-1:
             e=txt.find('\n', b)
             txt=txt[:b]+txt[e:]
             b=txt.find('##')
+            
+        #replace the links by the websites scrapped
+        b=txt.find('$')
+        while b!=-1:
+            e1=txt.find('\n', b)
+            e2=txt.find(' ', b)
+            link=txt[b+1:e2]
+            arg=txt[e2+1:e1]
+            #print(link, ';', arg)
+            website = scrap.get_from_url(link, int(arg))
+            #print(website)
+            txt=txt[:b]+website+txt[e1:]
+            b=txt.find('$')
+        
+        #extract paragraphes
         txt=txt.split('\n\n')
         for i, p in enumerate(txt):
             p=p.replace('\n', '').replace('\t', '')
@@ -82,15 +98,18 @@ def compile(input_names, output_name, folder='Biology'):
     # for p in newPara:
     #     print(p)
 
-    for p in newPara:
-        i=1
-        while i<len(p):
-            simEval=similarity(p[i-1].text,p[i].text)
-            if simEval>=0.75:
-                p.remove(p[i-1])
-            else:
-
-                i+=1
+    for paras in newPara:
+        j=0
+        while j<len(paras):
+            i=j+1
+            while i<len(paras):
+                simEval=similarity(paras[j].text,paras[i].text)
+                if simEval>=0.75:
+                    paras.remove(paras[i])
+                else:
+                    i+=1
+            j+=1
+            
     
     #print(" ")
     #for p in newPara:
@@ -115,16 +134,9 @@ def compile(input_names, output_name, folder='Biology'):
 import os
 if __name__=='__main__':
     folder=sys.argv[1]
-    my_dir = os.getcwd()
-    if(os.path.isdir(my_dir + "/writeTo/" + folder)):
-        compile([my_dir+"/writeTo/"+folder+"/notes.md", my_dir+"/back/new_notes.txt"], \
-            my_dir+"/writeTo/"+folder+"/notes.md", folder)
-    else:
-        os.mkdir(my_dir + "/writeTo/" + folder)
-        f = open(my_dir + "/writeTo/" + folder + "/notes.md", "w+").close()
-        compile([my_dir+"/writeTo/"+folder+"/notes.md", my_dir+"/back/new_notes.txt"], \
-            my_dir+"/writeTo/"+folder+"/notes.md", folder)
-    
+    dir = os.getcwd()
+    compile([dir+"/writeTo/"+folder+"/notes.md", dir+"/back/new_notes.txt"], \
+            dir+"/writeTo/"+folder+"/notes.md", folder)
     
 
 
