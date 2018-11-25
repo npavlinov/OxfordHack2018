@@ -107,8 +107,8 @@ for p in newPara:
 
             i+=1
 print(" ")
-# for p in newPara:
-#     print(p)
+#for p in newPara:
+#    print(p)
 
 
 
@@ -117,8 +117,14 @@ print(" ")
 
 output=open("out.txt", 'w')
 for paras in newPara:
+    if len(paras)>1:
+        output.write('\n##' + " ".join(paras[0].common(paras[1]))+'\n')
+    elif len(paras[0].keywords)>0:
+        output.write('\n##' + paras[0].keywords[0]+'\n')
+            
     for p in paras:
-        output.write('#' + " ".join(paras[0].common(paras[1])))
+        
+            
         if len(p.text)>5:
             output.write("\t"+p.text+"\n")
 

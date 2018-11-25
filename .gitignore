@@ -5,3 +5,4 @@ back/__pycache__/
 .DS_Store
 back/.DS_Stores
 test/
+back/key.json
