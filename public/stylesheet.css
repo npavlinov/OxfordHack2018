@@ -1,3 +1,8 @@
+body {
+    height: 100vh;
+    width: 100vw;
+}
+
 .button {
     background-color:rgba(0, 0, 250, 0.25); /* Green */
     border: none;
@@ -14,23 +19,47 @@
 }
 
 .jumbotron { 
-    background: linear-gradient(rgba(0, 0, 250, 0.25), rgba(125, 250, 250, 0.45));
+    background: #fff !important;
+    height: 90vh;
+}
+
+.man {
+    background: url(images/notes.png);
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+.ppl {
+    background: url(images/colab.png);
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left;
+}
+
+.exam {
+    background: url(images/exam.png);
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+.intro-h {
+    vertical-align: middle;
 }
 
 .page-footer {
-    position: fixed;
-    font-size: 25px;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    min-height: 100px;
-    background-color: rgba(125, 250, 250, 0.45);
     color: black;
     text-align: center;
-    display: inline-block;
 }
 
-/* #notes-list-content {
-    overflow: scroll;
-    position: absolute;
-} */
+.width-part {
+    width: 40%;
+}
+
+#notes-list-content li {
+    list-style-type: none;
+}
