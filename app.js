@@ -1,10 +1,11 @@
+let {PythonShell} = require('python-shell')
 const express = require('express');
 const app = express();
 const path = require('path')
 const fs = require('fs')
 const cors = require('cors')
 const fileUpload = require('express-fileupload')
-import {PythonShell} from 'python-shell';
+
 
 
 app.use(fileUpload())
@@ -64,14 +65,14 @@ app.post('/upload-note', (req, res) => {
         console.log('File uploaded', fileId)
     });
 
-    let options = {
-        args: ['value1', 'value2', 'value3']
-    };
+    // let options = {
+    //     args: [`${req.body.topic}`]
+    // };
 
-    PythonShell.run('back/compiler.py', options, function(err, results) {
-        if(err) throw err;
-    })
-    res.end();
+    // PythonShell.run('back/compiler.py', options, function(err, results) {
+    //     if(err) throw err;
+    // })
+    // res.end();
     })
 app.get('/topics', (req, res) => {
     res.json(dir)
