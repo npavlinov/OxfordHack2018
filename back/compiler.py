@@ -57,7 +57,7 @@ def keywords(text):
 
 # MAIN
 if len(sys.argv)==1:
-    files_names = ['first.txt', 'second.txt']
+    files_names = ['first.txt', 'second.txt','parietal_lobe.txt']
 else:
     files_names = sys.argv[1:]
 print(files_names)
@@ -104,6 +104,7 @@ for p in newPara:
         if simEval>=0.75:
             p.remove(p[i-1])
         else:
+
             i+=1
 print(" ")
 # for p in newPara:
@@ -117,8 +118,9 @@ print(" ")
 output=open("out.txt", 'w')
 for paras in newPara:
     for p in paras:
+        output.write('#' + " ".join(paras[0].common(paras[1])))
         if len(p.text)>5:
-            output.write("\t"+p.text+"\n\n")
+            output.write("\t"+p.text+"\n")
 
 output.close()
 

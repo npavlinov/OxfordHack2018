@@ -16,3 +16,5 @@ class Paragraph(object):
             return self.keywords[0] in other.keywords or self.keywords[1] in other.keywords or self.keywords[2] in other.keywords
         else:
             return False
+    def common(self,other):
+        return set(self.keywords).intersection(set(other.keywords))
